@@ -1,4 +1,4 @@
-# 🧩 Portfolio Angular Francisco Pozo Romero
+# 🧩 Portfolio Angular - Francisco Pozo Romero
 
 Este repositorio contiene una colección de mini aplicaciones desarrolladas con Angular, organizadas dentro de un portfolio interactivo. El proyecto tiene como objetivo mostrar mis habilidades en desarrollo frontend, integración de APIs, uso de librerías externas y trabajo con mapas interactivos.
 
