@@ -1,0 +1,52 @@
+mat-dialog-content {
+  height: 100vh !important;
+  max-height: none;
+  overflow-y: scroll !important;
+}
+
+span {
+ color: red;
+}
+
+button {
+  border: solid .0625rem white;
+  box-shadow: inset rgba(245, 245, 245, 0.26) 0 0 .625rem, inset 0 0 0 1px black;
+  height: 40px;
+}
+
+img {
+  box-shadow: rgba(0, 0, 0, 0.25) 0rem 0rem .5rem;
+  min-width: 2.75rem;
+  max-width: 2.57rem;
+  padding: .0825rem;
+}
+h3 {
+  font-size: 1.5rem;
+  color: black;
+}
+h4 {
+  font-size: 1.125rem;
+}
+
+@media (max-width: 577px) {
+  h3 {
+    font-size: 1.25rem;
+    color: black;
+  }
+  h4 {
+    font-size: .875rem;
+  }
+}
+@media (max-width: 225px) {
+  h2{
+    font-size: 1.10rem !important;
+  }
+  h3 {
+    font-size: 1rem;
+    color: black;
+  }
+  h4 {
+    font-size: .625rem;
+  }
+}
+

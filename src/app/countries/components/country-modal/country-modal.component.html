@@ -1,0 +1,86 @@
+
+<mat-dialog-content  class="text-start text-break" *ngIf="country">
+  <div class=" text-end">
+    <button mat-fab extended color=""
+    class="fs-6 me-2"
+    (click)="goToWeather()"
+    > Weather
+      <mat-icon>filter_drama</mat-icon>
+    </button>
+    <button mat-mini-fab color="" (click)="onClose()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+
+  <h2 mat-dialog-title
+    class="fs-1 fs-sm-3 text-center">
+    {{ country.name.common }}
+    <img class="img-thumbnail" [src]="country.flags.svg">
+  </h2>
+
+
+  <div class="row  ms-0 ms-md-3 h-75">
+    <div class="col-12 col-md-6" *ngIf="country.capital">
+      <h3 mat-dialog-title class="fst-italic p-0">{{country.capital.length === 1? "Capital" : "Capitals"}}</h3>
+      <mat-chip-set>
+        <mat-chip *ngFor="let capital of country.capital;">
+        {{capital}}</mat-chip>
+      </mat-chip-set>
+    </div>
+
+    <div class="col-12 col-md-6" *ngIf="country.currencies">
+      <h3 mat-dialog-title class="fst-italic p-0">{{(country.currencies | keyvalue).length === 1? "Currency" : "Currencies"}}</h3>
+      <mat-chip-set>
+        <mat-chip *ngFor="let currency of country.currencies | keyvalue;">
+          {{currency.value.name}} "{{currency.value.symbol}}"
+        </mat-chip>
+      </mat-chip-set>
+      <h4 >
+     </h4>
+    </div>
+    <div class="col-12 col-md-6">
+      <h3 mat-dialog-title class="fst-italic p-0">Population</h3>
+      <mat-chip-set>
+          <mat-chip>- {{ country.population | number }}</mat-chip>
+      </mat-chip-set>
+
+    </div>
+
+
+    <div class="col-12 col-md-6" *ngIf="country.languages">
+      <h3 mat-dialog-title class="fst-italic p-0">{{(country.languages| keyvalue).length === 1? "Language" : "Languages"}}</h3>
+      <mat-chip-set>
+        <mat-chip *ngFor="let language of country.languages | keyvalue;">
+        {{language.value}}</mat-chip>
+      </mat-chip-set>
+
+    </div>
+
+
+  </div>
+  <!-- <div class="col-6" *ngIf="country.capital">
+    <h3 mat-dialog-title class="fst-italic p-0">{{country.capital.length === 1? "Capital" : "Capitals"}}</h3>
+    <h4 *ngFor="let capital of country.capital;">
+    - {{capital}}</h4>
+  </div>
+
+  <div class="col-6" *ngIf="country.currencies">
+    <h3 mat-dialog-title class="fst-italic p-0">{{(country.currencies | keyvalue).length === 1? "Currency" : "Currencies"}}</h3>
+    <h4 *ngFor="let currency of country.currencies | keyvalue;">
+    - {{currency.value.name}} "{{currency.value.symbol}}"</h4>
+  </div>
+  <div class="col-6">
+    <h3 mat-dialog-title class="fst-italic p-0">Population</h3>
+    <h4>- {{ country.population | number }}</h4>
+  </div>
+
+
+  <div class="col-6" *ngIf="country.languages">
+    <h3 mat-dialog-title class="fst-italic p-0">{{(country.languages| keyvalue).length === 1? "Language" : "Languages"}}</h3>
+    <h4 *ngFor="let language of country.languages | keyvalue;">
+    - {{language.value}}</h4>
+  </div> -->
+
+</mat-dialog-content>
+
+

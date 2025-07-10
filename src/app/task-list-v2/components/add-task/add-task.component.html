@@ -1,0 +1,10 @@
+<form class="px-1 px-sm-2 px-md-5 mb-3 mt-1" (ngSubmit)="emitTask()">
+  <div class="d-flex">
+    <input type="text"
+      [(ngModel)]="task.name"
+      name="taskName"
+      class="form-control me-1 me-sm-3 me-md-5"
+      placeholder="Escribe la tarea...">
+    <button type="submit" class="btn btn-primary w-25 p-0">Añadir <span class="d-none d-sm-inline">tarea</span></button>
+  </div>
+</form>

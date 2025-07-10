@@ -1,0 +1,39 @@
+<form [formGroup]="registerForm" class="row justify-content-center">
+  <h1 class="mb-4">Registro</h1>
+
+  <mat-form-field class="col-10 col-md-7" color="accent">
+    <mat-label>Usuario</mat-label>
+    <input formControlName="userName"
+    type="text" matInput placeholder="Nombre de usuario">
+    <mat-error *ngIf="isValidField('userName')">El usuario es <strong>requerido</strong>.</mat-error>
+  </mat-form-field>
+  <mat-form-field class="col-10 col-md-7" color="accent">
+    <mat-label>Contraseña</mat-label>
+    <input formControlName="password"
+    type="password" matInput placeholder="Contraseña">
+    <mat-error *ngIf="isValidField('password')">La contraseña debe de ser <strong>mayor de 6</strong> caracteres.</mat-error>
+  </mat-form-field>
+
+
+  <mat-form-field class="col-10 col-md-7" color="accent">
+    <mat-label>Repetir contraseña</mat-label>
+    <input formControlName="password2"
+    type="password" matInput placeholder="Contraseña">
+    <mat-error *ngIf="isValidField('password2')">La contraseña debe coincidir.</mat-error>
+  </mat-form-field>
+  <mat-form-field class="col-10 col-md-7" color="accent">
+    <mat-label>Email</mat-label>
+    <input formControlName="email"
+    type="email" matInput placeholder="Email">
+    <mat-error *ngIf="isValidField('email')">Por favor introduce un email valido.</mat-error>
+  </mat-form-field>
+  <button class="col-8 col-md-5 mx-1  mt-3" mat-flat-button color="primary"
+  (click)="onRegister()">
+    <mat-icon>save</mat-icon>
+    Crear cuenta
+  </button>
+  <div class="col-12 mt-5 text-end">
+    <a class="text-decoration-none"
+    routerLink="/auth/login">¿Ya tienes cuenta?</a>
+  </div>
+</form>

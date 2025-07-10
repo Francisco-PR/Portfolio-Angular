@@ -1,0 +1,54 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+
+$dark-primary: mat.define-palette(mat.$blue-palette, 800);
+$dark-accent: mat.define-palette(mat.$blue-palette,300);
+$dark-warn: mat.define-palette(mat.$deep-orange-palette, 900);
+
+$dark-theme: mat.define-dark-theme((
+  color: (
+    primary: $dark-primary,
+    accent: $dark-accent,
+    warn: $dark-warn,
+    background: mat.$dark-theme-background-palette,
+    foreground: mat.$dark-theme-foreground-palette,
+  )
+));
+$spiner-primary: mat.define-palette(mat.$teal-palette, A700);
+$spiner-accent: mat.define-palette(mat.$yellow-palette, 700);
+$spiner-warn: mat.define-palette(mat.$red-palette, A200);
+
+$dark-theme-spiner: mat.define-dark-theme((
+  color: (
+    primary: $spiner-primary,
+    accent: $spiner-accent,
+    warn: $spiner-warn,
+    background: mat.$dark-theme-background-palette,
+    foreground: mat.$dark-theme-foreground-palette,
+  )
+));
+.dark-theme .theme-spiner{
+  @include mat.all-component-colors($dark-theme-spiner)
+}
+
+.dark-theme {
+
+  @include mat.all-component-colors($dark-theme);
+  /* #mainContainer {
+    background-color: #121212 !important;
+    color: white;
+
+  }
+
+
+  h1, h2, h3, h4, h5, h6, p, span, li {
+    color: white;
+  }
+  button {
+
+    background-color: mat.get-color-from-palette($dark-primary, darker)!important;
+    color: mat.get-color-from-palette($dark-primary, darker)!important;
+  } */
+
+}

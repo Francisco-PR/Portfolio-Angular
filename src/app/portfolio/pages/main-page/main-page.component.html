@@ -1,0 +1,78 @@
+<mat-sidenav-container  class="sidenavContainer">
+
+  <mat-sidenav #sidenav mode="push" [ngStyle]="{ width: '15.625rem' }">
+    <mat-toolbar color="accent">
+      <span>Menú</span>
+      <span class="spacer"></span>
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+
+    </mat-toolbar>
+
+    <mat-nav-list>
+      <mat-list-item
+      *ngFor="let item of sidebarItems"
+      [routerLink]="item.url"
+      (click)="sidenav.toggle()"
+    >
+      <mat-icon matListItemIcon>{{ item.icon }}</mat-icon>
+      {{ item.label }}
+      </mat-list-item>
+    </mat-nav-list>
+
+  </mat-sidenav>
+
+
+  <mat-toolbar color="primary">
+    <button mat-icon-button (click)="sidenav.toggle()"
+    class="ms-0 ms-md-3">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <button mat-icon-button routerLink=""
+    class="ms-0 ms-md-3">
+      <mat-icon>home</mat-icon>
+    </button>
+    <button mat-icon-button [routerLink]="'Esto no existe'" matTooltip="Simula un error 404">
+      <mat-icon>error</mat-icon>
+    </button>
+    <span class="spacer"></span>
+    <shared-theme-switcher></shared-theme-switcher>
+
+
+  </mat-toolbar>
+  <mat-toolbar [ngStyle]="{ height: '2.8rem' }" class="login">
+    <span class="spacer"></span>
+
+    <button *ngIf="!user"
+    mat-button
+    routerLink="/auth"
+    color="primary"
+    class="fs-6 fw-bold">
+      Login
+      <mat-icon>login</mat-icon>
+    </button>
+
+    <div *ngIf="user">
+    <button mat-button color="accent" class="fs-6 fw-bold"
+    [matMenuTriggerFor]="userMenu">
+      {{ user.userName | titlecase }}
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #userMenu="matMenu" xPosition="after">
+      <button mat-menu-item (click)="onLogout()"
+      class="logout" routerLink="">
+        Logout
+        <mat-icon>logout</mat-icon>
+      </button>
+    </mat-menu>
+    </div>
+
+  </mat-toolbar>
+
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+
+</mat-sidenav-container>
+

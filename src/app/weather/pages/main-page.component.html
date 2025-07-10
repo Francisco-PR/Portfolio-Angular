@@ -1,0 +1,15 @@
+<div id="mainContainer">
+  <search-weather ></search-weather>
+  <div id="title"><img src="../../../assets/weather-icon.png" alt="weather-icon"> <h1>Pronóstico del tiempo</h1></div>
+  <mat-divider>
+  </mat-divider>
+  <display-weather
+  *ngIf="firstSearh"
+  [weather]="weatherData"
+  ></display-weather>
+  <div id="noSearchBG" *ngIf="!firstSearh">
+  </div>
+</div>
+
+
+

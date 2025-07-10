@@ -1,0 +1,33 @@
+<h1 class="mx-1 mx-sm-2 mx-md-4 mx-lg-5 mt-3">Lista de tareas</h1>
+<hr>
+<div class="row">
+
+  <div class="col-12">
+    <task-list-list-menu
+    (creatingTask_Visibility)="creatingTask_Visibility()"
+    (changeMode)="changeMode()">
+    </task-list-list-menu>
+  </div>
+
+  <div class="col-12">
+    <task-list-add-task
+    *ngIf="creatingTask"
+    (onNewtask)="addTask($event)">
+    </task-list-add-task>
+  </div>
+
+  <div class="col-12">
+    <div class="row">
+      <task-list-list
+      *ngFor="let list of tasksList"
+      [edit] = "listMode"
+      [taskList] = "list"
+      (onChangeState)="onChangeStateTask($event)"
+      (onDelete)="deleteTaskById($event)"
+      class="col-12 col-md-6">
+      </task-list-list>
+    </div>
+  </div>
+</div>
+
+

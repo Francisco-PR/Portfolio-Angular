@@ -1,0 +1,18 @@
+<form>
+  <mat-form-field>
+    <mat-label >Buscar ciudad</mat-label>
+    <input matInput
+    color="warn"
+    placeholder="Caceres"
+    (keyup.enter)="searchTag()"
+    #txtTagInput>
+  </mat-form-field>
+  <button mat-raised-button color="accent"
+  id="btn"
+  (click)="searchTag()"
+  >Buscar</button>
+</form>
+
+<!-- "(keyup.enter)="searchTag(txtTagInput.value)" -->
+
+

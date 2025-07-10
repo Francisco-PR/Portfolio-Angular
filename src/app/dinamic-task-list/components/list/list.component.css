@@ -1,0 +1,51 @@
+.delete,  .delete mat-icon{
+  color: red;
+}
+.completedIcon {
+  color: rgb(97, 161, 0);
+  text-shadow: 0 0 3px rgb(153, 255, 0);
+}
+
+.taskText {
+  word-break: break-word !important;
+  white-space: normal !important;
+  margin: 0 !important;
+  font-size: 1rem;
+  font-weight: 500;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  min-height: 40px;
+  cursor: pointer;
+}
+
+.pendingState {
+  color: rgba(255, 255, 255, 0);
+  text-shadow: none
+}
+
+li {
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 0;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  list-style: none;
+}
+
+li:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  transform: scale(1.02);
+}
+
+li.noTasks {
+  transition: none
+}
+
+.noTasks p {
+  cursor: default;
+}
+
+li.noTasks:hover {
+  background-color: none;
+  transform: none;
+}

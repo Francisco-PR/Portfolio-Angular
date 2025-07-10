@@ -1,0 +1,123 @@
+<div class="row justify-content-between">
+  <div class="col-10 col-md-5 ms-0 ms-md-4 mx-auto mx-md-0">
+    <h5>Hola, soy</h5>
+    <h3>Francisco P.R.</h3>
+    <h5>Desarrollador front-end</h5>
+  </div>
+  <div class="col-10 col-md-5 mt-5 mx-auto">
+    <h4 class="text-center fw-bolder">Skills</h4>
+    <mat-chip-set >
+      <mat-chip>
+        <img matChipAvatar src="https://img.icons8.com/arcade/64/html-5.png" alt="HTML"/>
+        HTML
+      </mat-chip>
+      <mat-chip>
+        <img matChipAvatar src="https://img.icons8.com/stickers/50/css3.png" alt="CSS"/>
+        CSS
+      </mat-chip>
+      <mat-chip>
+        <img matChipAvatar src="https://img.icons8.com/fluency/96/typescript--v2.png" alt="TYPESCRIPT"/>
+        TypeScript
+      </mat-chip>
+      <mat-chip>
+        <img matChipAvatar src="https://img.icons8.com/color-glass/48/bootstrap.png" alt="BOOTSTRAP"/>
+        Bootstrap
+      </mat-chip>
+      <mat-chip>
+        <img matChipAvatar src="https://img.icons8.com/fluency/96/angularjs.png" alt="ANGUlAR"/>
+        ANGULAR
+      </mat-chip>
+      <mat-chip>
+        <img matChipAvatar src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAzFBMVEU9ULY7T7
+        c1TbkmS72WdYfim0bohyqgbXtEU7E3TrgtS7mEbJPSkVf/rA3/qBv7jQD/kAD/kQDYgUOQaYchSL1wY53Dimb/qCH/qiPMfVN/Y5JdXKdPVq
+        z/pAD/phj7igD/ngD/zZH/////7tn8plD7gwD2pCn/uFv/9Oj8rGD/2a79tnXOkFv/wW//+/K4hHD/4rz/9OL9wIHSf0uheYH/yIL/7M67d2
+        T/2aT/4LD+zZxoYKH/4bP/8Nf8tWaKZ4vqnjn7lyWydGzdgzvpV4TLAAABGElEQVR4AbXRRYICMRAF0E4HSyCCu7u7O9z/TlNpq7Etf/uiv6
+        zPh9iU2uRfsikJhSPRGGW/hVEeTwghlU6m0hb/7iSTzUkh8/mCUkprXSwhk3LeSN5F10u+kopwqFqr1pUbRIsbrDWarXan67IuEx9pT+Zr/U
+        EL0h46rH0CDAOOWm4GY6MUcQLvaUxnro7AIoh8LvK1xWy5NLzqwqlrjrgR8NbtEjJYznaAe0Q7LvKyfzjujJ7qgFEbyzsDTo+Xy3FxXRxugH
+        cskMTg2Fq1f1hcYIXBLKLFTXsub5U5tkIQ6cMtUNafTgWKoYFupOGCW/uL/Rw5Z3MhDepkMcatXyG0khAFpd9l+mMbjvzxLGWQfoZxxqzP5w
+        us1iJ2YXE35wAAAABJRU5ErkJggg==" alt="ANGULAR MATERIAL"/>
+        ANGULAR MATERIAL
+      </mat-chip>
+
+    </mat-chip-set>
+  </div>
+  <div class="col-12 mt-5">
+    <h4 class="text-center fw-bolder">Proyectos</h4>
+    <div class="row justify-content-between align-content-center ">
+      <mat-divider class="my-4">
+      </mat-divider>
+      <!-- TaskList -->
+      <div class="col-10 col-md-6 mx-auto my-2">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title class="fw-bold mb-2">Task list</mat-card-title>
+          </mat-card-header>
+          <img mat-card-image src="../../../../assets/task-list-1900x845.png" alt="Task List">
+          <mat-card-content class="mt-2">
+            <p>
+              Permite planificar y gestionar tareas para que nunca se olvide nada.
+            </p>
+          </mat-card-content>
+          <mat-card-actions class="align-self-end">
+            <button mat-raised-button color="accent" [routerLink]="'tasklist'" class="align-self-end"><mat-icon>launch</mat-icon> Ir a Task List</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+      <!-- Weather -->
+      <div class="col-10 col-md-6 mx-auto my-2">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title class="fw-bold mb-2">Weather</mat-card-title>
+          </mat-card-header>
+          <img mat-card-image src="../../../../assets/weather-1900x900.png" alt="Photo of a Shiba Inu">
+          <mat-card-content class="mt-2">
+            <p>
+              Permite ver el tiempo actual de un lugar indicado.
+            </p>
+          </mat-card-content>
+          <mat-card-actions class="align-self-end">
+            <button mat-raised-button color="accent" [routerLink]="'weather'" class="align-self-end"><mat-icon>launch</mat-icon> Ir a Weather</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+      <!-- Countries -->
+      <div class="col-10 col-md-6 mx-auto my-2">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title class="fw-bold mb-2">Countries</mat-card-title>
+          </mat-card-header>
+          <img mat-card-image src="../../../../assets/countries-1900x900.png" alt="Photo of a Shiba Inu">
+          <mat-card-content class="mt-2">
+            <p>
+              Muestra las banderas de todos lo países del mundo, click en ellas para más detalles.
+            </p>
+          </mat-card-content>
+          <mat-card-actions class="align-self-end">
+            <button mat-raised-button color="accent" [routerLink]="'countries'" class="align-self-end"><mat-icon>launch</mat-icon> Ir a Countries</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+      <!-- Poblaciones España -->
+      <div class="col-10 col-md-6 mx-auto my-2">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title class="fw-bold mb-2">Poblaciones España</mat-card-title>
+          </mat-card-header>
+          <img mat-card-image src="../../../../assets/poblaciones-españa-1900x845.png" alt="Poblaciones España">
+          <mat-card-content class="mt-2">
+            <p>
+              Permite buscar los municipios de la comunidad y provincia deseada.
+            </p>
+          </mat-card-content>
+          <mat-card-actions class="align-self-end">
+            <button mat-raised-button color="accent" [routerLink]="'poblaciones-esp'" class="align-self-end"><mat-icon>launch</mat-icon> Ir a Poblaciones España</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+

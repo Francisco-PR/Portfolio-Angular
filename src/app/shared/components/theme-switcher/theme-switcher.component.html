@@ -1,0 +1,19 @@
+
+<mat-slide-toggle
+  hideIcon="true"
+  color="warn"
+  labelPosition="before"
+  class="me-0 me-md-5"
+  (click)="changeTheme()"
+  [checked]="darkTheme"
+>
+  <button mat-icon-button
+    (click)="changeTheme()"
+    class="text-white"
+    disabled
+  >
+    <mat-icon *ngIf="darkTheme">dark_mode</mat-icon>
+    <mat-icon *ngIf="!darkTheme">light_mode</mat-icon>
+  </button>
+</mat-slide-toggle>
+

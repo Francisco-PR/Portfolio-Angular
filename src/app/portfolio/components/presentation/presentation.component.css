@@ -1,0 +1,11 @@
+h3 {
+  font-weight: bolder;
+}
+img {
+  aspect-ratio: 2 / 1;
+}
+
+p {
+  height: 4.5rem;
+  margin-top: .4rem;
+}

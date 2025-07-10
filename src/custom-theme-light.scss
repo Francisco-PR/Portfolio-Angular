@@ -1,0 +1,39 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+
+@include mat.core();
+$light-primary: mat.define-palette(mat.$blue-palette, 500);
+$light-accent: mat.define-palette(mat.$light-blue-palette, 500);
+$light-warn: mat.define-palette(mat.$deep-orange-palette, 900);
+
+
+$light-theme: mat.define-light-theme((
+  color: (
+    primary: $light-primary,
+    accent: $light-accent,
+    warn: $light-warn,
+  ),
+  typography: mat.define-typography-config(),
+  density: 0,
+));
+
+$spiner-primary: mat.define-palette(mat.$teal-palette, 300);
+$spiner-accent: mat.define-palette(mat.$yellow-palette, 800);
+$spiner-warn: mat.define-palette(mat.$red-palette, 400);
+
+$light-theme-spiner: mat.define-light-theme((
+  color: (
+    primary: $spiner-primary,
+    accent: $spiner-accent,
+    warn: $spiner-warn,
+    background: mat.$light-theme-background-palette,
+    foreground: mat.$light-theme-foreground-palette,
+  )
+));
+.theme-spiner{
+  @include mat.all-component-colors($light-theme-spiner);
+}
+
+
+@include mat.all-component-themes($light-theme);

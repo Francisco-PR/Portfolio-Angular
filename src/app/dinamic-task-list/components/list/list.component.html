@@ -1,0 +1,43 @@
+<div class="d-flex mb-4">
+  <button mat-icon-button [matMenuTriggerFor]="listMenu"><mat-icon>list</mat-icon></button>
+<mat-menu #listMenu>
+  <button mat-menu-item (click)="modifyItem( taskList )">
+    Modificar lista<mat-icon>mode_edit</mat-icon></button>
+  <button mat-menu-item (click)="deleteItem( taskList )" class="delete">
+    Eliminar lista<mat-icon>delete</mat-icon>
+  </button>
+</mat-menu>
+<h3 class="mx-1 mx-lg-3 mx-md-4 mx-sm-2 my-auto">{{ taskList.title }}</h3>
+</div>
+<ul class="" >
+  <li *ngFor="let task of taskList.tasks;"
+  class="d-flex align-items-center justify-content-between mb-4">
+
+
+  <div class="d-flex align-items-center w-100">
+
+    <mat-icon  class="text-center completedIcon me-2" (click)="changeStateTask( task )"
+    [ngClass]="{'pendingState': !task.completed}">done</mat-icon>
+
+
+    <p class="text-black w-75 fs-5 fst-italic ms-4 my-auto taskText" (click)="changeStateTask( task )"
+    [ngClass]="{'text-decoration-line-through': task.completed}"
+    >{{task.name}}
+  </p>
+
+
+    <button mat-icon-button [matMenuTriggerFor]="taskMenu" class="text-end"><mat-icon>more_vert</mat-icon></button>
+    <mat-menu #taskMenu>
+      <button mat-menu-item (click)="modifyItem( task )">
+        Modificar tarea<mat-icon>mode_edit</mat-icon>
+      </button>
+      <button mat-menu-item (click)="deleteItem( task )" class="delete">
+        Eliminar tarea<mat-icon>delete</mat-icon>
+      </button>
+    </mat-menu>
+
+  </div>
+  </li>
+  <li *ngIf="!taskList.tasks[0]" class="noTasks"><p class="text-black fs-4 my-auto ps-3 taskText">No hay tareas</p></li>
+</ul>
+

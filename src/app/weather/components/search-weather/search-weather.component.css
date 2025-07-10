@@ -1,0 +1,15 @@
+#btn  {
+  height:  calc(45px + .6vw);
+}
+mat-form-field {
+  height:  calc(70.6px + .6vw);
+  margin-top: 1.50rem;
+}
+form {
+  padding: 0 4%;
+  display: grid;
+  grid-column-gap: 2%;
+  grid-template-columns:1fr 0.2fr;
+  height: 100%;
+  align-items: center;
+}

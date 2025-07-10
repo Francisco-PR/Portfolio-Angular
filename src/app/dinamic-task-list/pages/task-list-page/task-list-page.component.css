@@ -1,0 +1,15 @@
+
+
+@media (max-width: 768px) {
+  full-calendar {
+    width: 100% !important;
+    margin: 0 auto;
+  }
+}
+
+
+@media (max-width: 576px) {
+  full-calendar {
+    font-size: 12px !important;
+  }
+}

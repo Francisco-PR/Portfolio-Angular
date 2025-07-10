@@ -1,0 +1,51 @@
+
+  <mat-dialog-actions class="justify-content-end p-3 actions">
+    <ng-container *ngIf="!item; else modifyTempl">
+      <h1 matDialogTitle>{{'Agregar ' | addPipe: type! }}</h1>
+    </ng-container>
+    <ng-template #modifyTempl>
+      <h1 matDialogTitle>{{'Modificar ' | addPipe: type! }}</h1>
+    </ng-template>
+
+
+
+    <span class="spacer"></span>
+    <button mat-mini-fab color="accent" (click)="onClose()">
+      <mat-icon>cancel</mat-icon>
+    </button>
+
+  </mat-dialog-actions>
+  <mat-dialog-content  class="text-break text-start">
+
+    <form [formGroup]="dialogForm" (ngSubmit)="onSubmit()" class="text-center">
+
+      <mat-form-field class="w-75 mb-3" color="accent">
+        <mat-label> {{'Nombre de ' | addPipe: type!}} </mat-label>
+        <input matInput type="text" formControlName="name">
+      </mat-form-field>
+
+      <mat-form-field *ngIf="type === 'task' " class="w-75 mb-3" color="accent">
+        <mat-label> {{ tasksLists!.length === 0 ? 'Lista 1':'Nombre de lista' }} </mat-label>
+        <mat-select formControlName="listName">
+          <mat-option *ngFor="let list of tasksLists" [value]="list.title">{{list.title}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field *ngIf="type === 'task' " class="w-75" color="accent">
+        <mat-label>Fecha</mat-label>
+        <input formControlName="date" matInput [min]="minDate" [matDatepicker]="picker">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <div class="text-end w-100 mt-3">
+        <button mat-flat-button type="submit" [disabled]="dialogForm.invalid" color="primary">
+          {{!item? 'Guardar': 'Modificar' }}
+        </button>
+      </div>
+
+    </form>
+
+
+  </mat-dialog-content>

@@ -1,0 +1,57 @@
+<h1 class="mx-1 mx-sm-2 mx-md-4 mx-lg-5 mt-3 text-center">Listas de tareas</h1>
+<hr>
+
+
+<div class="row" >
+
+  <div class="col-12 text-end mb-4">
+    <div class="row">
+      <div class="col-12 col-md-9 text-center text-md-end mb-2 mb-md-0">
+        <button mat-fab extended color="primary"
+        class="fs-4 me-3"
+        (click)="openDialog('task')"
+        > Tarea
+          <mat-icon>add_circle</mat-icon>
+        </button>
+        <button mat-fab extended color="primary"
+        class="fs-4"
+        (click)="openDialog('list')"
+        > Lista
+          <mat-icon>add_circle</mat-icon>
+        </button>
+      </div>
+      <div class="col-12 col-md-3 text-center text-md-end">
+        <button mat-fab extended color="accent"  color="primary"
+        class="fs-4 ms-3"
+        (click)="toggleCalendar()"
+        > Calendario
+        <mat-icon>event</mat-icon>
+      </button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="col-12">
+
+    <div class="row" *ngIf="!showCalendar">
+      <list *ngFor="let list of tasksLists"
+        (onDelete)="deleteItem($event)"
+        (onModify)="openDialog( undefined ,$event)"
+        (onChangeState)="changeStateTask($event)"
+        [taskList]="list"
+        class="col-12 col-md-6">
+      </list>
+    </div>
+
+
+
+  </div>
+</div>
+
+<div class="row">
+  <full-calendar [options]="calendarOptions" *ngIf="showCalendar" [events]="" #calendar class="mx-auto col-12 col-md-8"></full-calendar>
+</div>
+
+

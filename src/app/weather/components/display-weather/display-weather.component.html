@@ -1,0 +1,79 @@
+
+      <mat-list id="info-list">
+        <mat-list-item>
+
+          <div id="description">
+            <h3 id="title">{{ weather.name }}</h3>
+            <img src="{{weather.icon}}" alt="weather-icon">
+            <h4>{{ weather.description }}</h4>
+          </div>
+          <div id="fix">
+            <h4>Se siente como {{weather.feelsLike}} °C</h4>
+            <h4>{{ weather.visibility }}</h4>
+            <h4>Recomendación: <br id="fix"> {{ weather.activitiRecom }}</h4>
+          </div>
+        </mat-list-item>
+      </mat-list>
+      <mat-list class="theme-spiner" id="spiner-list">
+        <mat-list-item>
+          <mat-card>
+            <mat-card-header>
+              <mat-card-title> <h3>Temperatura</h3></mat-card-title>
+              <mat-card-subtitle><h3>{{weather.temperature}} °C</h3></mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+              <mat-progress-spinner
+                  [color]="weather.temperatureSpiner.color"
+                  [mode]="weather.temperatureSpiner.mode"
+                  [value]="weather.temperatureSpiner.value">
+              </mat-progress-spinner>
+            </mat-card-content>
+          </mat-card>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-card>
+            <mat-card-header>
+              <mat-card-title><h3>Humedad</h3></mat-card-title>
+              <mat-card-subtitle><h3>{{weather.humidity}} %</h3></mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+              <mat-progress-spinner
+              [color]="weather.humiditySpiner.color"
+              [mode]="weather.humiditySpiner.mode"
+              [value]="weather.humiditySpiner.value">
+              </mat-progress-spinner>
+            </mat-card-content>
+          </mat-card>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-card>
+            <mat-card-header>
+              <mat-card-title><h3>Presión</h3></mat-card-title>
+              <mat-card-subtitle><h3>{{weather.pressure }}  hPa</h3></mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+              <mat-progress-spinner
+                  [color]="weather.pressureSpiner.color"
+                  [mode]="weather.pressureSpiner.mode"
+                  [value]="weather.pressureSpiner.value">
+              </mat-progress-spinner>
+            </mat-card-content>
+          </mat-card>
+        </mat-list-item>
+        <mat-list-item>
+            <mat-card>
+              <mat-card-header>
+                <mat-card-title><h3>Viento</h3></mat-card-title>
+                <mat-card-subtitle><h3>{{weather.windSpeed }}  Km/h</h3></mat-card-subtitle>
+              </mat-card-header>
+              <mat-card-content>
+                <mat-progress-spinner
+                  [color]="weather.windSpiner.color"
+                  [mode]="weather.windSpiner.mode"
+                  [value]="weather.windSpiner.value">
+          </mat-progress-spinner>
+              </mat-card-content>
+            </mat-card>
+        </mat-list-item>
+      </mat-list>
+

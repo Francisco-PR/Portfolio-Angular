@@ -1,0 +1,17 @@
+form {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+mat-form-field {
+  width: 80%;
+}
+
+@media (max-width: 550px) {
+  form {
+    width: 90%;
+  }
+  mat-form-field {
+    width: 90%;
+  }
+}

@@ -1,0 +1,25 @@
+<form [formGroup]="loginForm" class="row justify-content-center" (ngSubmit)="onLogin()">
+  <h1 class="mb-4">Login</h1>
+
+  <mat-form-field class="col-10 col-md-7" color="accent">
+    <mat-label>Usuario</mat-label>
+    <input formControlName="userName"
+    type="text" matInput placeholder="Nombre de usuario">
+  </mat-form-field>
+
+  <mat-form-field class="col-10 col-md-7" color="accent">
+    <mat-label>Contraseña</mat-label>
+    <input formControlName="password"
+    type="password" matInput placeholder="Contraseña">
+  </mat-form-field>
+
+  <button type="submit" class="col-8 col-md-5 mx-1  mt-3" mat-flat-button color="primary">
+    <mat-icon>save</mat-icon>
+    Iniciar sesión
+  </button>
+
+  <div class="col-12 mt-5 text-end">
+    <a class="text-decoration-none"
+    routerLink="/auth/new-account">¿No tienes cuenta?</a>
+  </div>
+</form>

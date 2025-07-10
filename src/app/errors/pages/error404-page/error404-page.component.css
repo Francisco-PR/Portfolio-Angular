@@ -1,0 +1,8 @@
+button {
+  transform: scale(2.2);
+}
+img {
+  width: min(200px);
+  margin: 0 auto;
+}
+
